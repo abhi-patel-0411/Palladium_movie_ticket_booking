@@ -1,0 +1,409 @@
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+   *::selection {
+       background-color: var(--navbar--bg--color);
+        color: var(--black--color);
+   }
+   html {
+       scroll-behavior: smooth;
+       /* scroll-snap-type: Y mandatory; */
+   }
+
+   ::-webkit-scrollbar {
+       width: 0.5rem;
+   }
+
+   /* Track */
+   ::-webkit-scrollbar-track {
+       background: var(--body--bg--color);
+
+   }
+
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+       background: var(--navbar--bg--color);
+       border-radius: 50px;
+   }
+
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+       background: var(--navbar--bg--color);
+   }
+
+   :root {
+       --body--bg--color: #000;
+       /* --card--bg--color:#2a2d32; */
+       --navbar--bg--color: rgb(190, 155, 104);
+       --text-color: #fff;
+       --footer--text--color: #ccc;
+       --footer--hover--color: #f39c12;
+
+
+       --seat-bg-color: rgba(184, 184, 184, .3);
+       --seat--selected--bg--color: #ff9800;
+       --seat--booked--bg--color: #fd0505;
+       --seat--book--hover--color: #66bb6a;
+       --movie--card--btn: #fd6565;
+       --seat--before--color: rgba(184, 184, 184, .5);
+       --box--shadow--color: rgba(0, 0, 0, 0.1);
+       --box--ticket--shadow--color: rgba(0, 0, 0, 0.2);
+       --details--row--bg--color: rgba(0, 0, 0, 0.6);
+       --black--color: #000;
+
+   }
+
+   body {
+       font-family: "Poppins", serif;
+       font-weight: 400;
+       font-style: normal;
+       width: 100vw;
+       height: 100vh;
+       padding-top: 90px;
+       overflow-x: hidden;
+       background: var(--body--bg--color);
+       
+
+   }
+
+   nav {
+       background-color: var(--navbar--bg--color);
+   }
+   /* nav {
+       overflow: hidden;
+       font-size: medium;
+   } */
+    .navbar .navbar-nav .nav-link:hover {
+        color: var(--black--color);
+    }
+ h1,
+ h2,
+ h3 {
+     color: var(--navbar--bg--color);
+ }
+
+
+ 
+
+
+ .hero-section {
+     background: url('./img/pvr4.jpg') no-repeat center center;
+     background-size: cover;
+     color: var(--text-color);
+     /* padding: 80px 0; */
+     height: 400px;
+     text-align: center;
+ }
+
+ .hero-section h1 {
+     font-size: 3rem;
+ }
+
+ .about-container {
+     padding: 50px 0;
+ }
+
+ .about-card {
+     background-color: var(--text-color);
+     border-radius: 15px;
+     box-shadow: 0 4px 8px var(--box--shadow--color);
+     padding: 20px;
+     margin-bottom: 20px;
+     margin: 0px 10px;
+     text-align: center;
+ }
+
+ body {
+     overflow-x: hidden;
+ }
+
+
+ .review-section .row {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ .review-section {
+     margin-bottom: 30px;
+ }
+
+ .review-card {
+     background-color: var(--text-color);
+     box-shadow: 0 4px 8px var(--box--shadow--color);
+     border-radius: 10px;
+     padding: 20px;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 100%;
+     /* Ensures all cards take the same height */
+     min-height: 180px;
+     /* Adjust as needed */
+     overflow: hidden;
+     /* Prevents scrollbar */
+     word-wrap: break-word;
+ }
+
+ .review-img {
+     width: 80px;
+     /* Profile picture size */
+     height: 80px;
+     border-radius: 50%;
+     /* Makes it circular */
+     object-fit: cover;
+     /* Ensures the image is properly cropped */
+     margin-bottom: 10px;
+ }
+
+ @media (max-width: 576px) {
+     .review-section .row {
+         flex-direction: column;
+         /* Stack items vertically */
+     }
+
+     .review-card {
+         min-height: auto;
+         /* Allow natural height */
+         margin: 10px 15px;
+         /* Add spacing */
+     }
+ }
+
+ /* Responsive Design */
+ @media(max-width: 768px) {
+     .hero-section {
+         height: 250px;
+         padding: 40px 0;
+     }
+
+     
+     .hero-section h1 {
+         font-size: 2rem;
+     }
+
+     .about-card {
+         padding: 15px;
+         margin: 10px 10px;
+     }
+
+     .review-card {
+         
+         margin: 10px 0px;
+        
+        overflow: hidden;
+     }
+         body {
+             overflow-x: hidden;
+             width: 100%;
+         }
+    
+         nav {
+             overflow-x: hidden;
+         }
+    
+         div {
+             overflow-x: hidden;
+         }
+    
+         footer {
+             overflow-x: hidden;
+         }
+     
+ }
+/* Global reset */
+
+
+
+ footer {
+     background-color: var(--navbar--bg--color);
+     color: var(--text-color);
+     padding: 20px 0;
+     text-align: center;
+     /* position: relative; */
+     
+     z-index: 1;
+     
+ }
+ footer {
+     background-color: var(--navbar--bg--color);
+     text-align: center;
+ }
+
+.footer-subheading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+ul li a {
+    color: var(--footer--text--color);
+    text-decoration: none;
+    list-style: none;
+}
+
+ul li a:hover {
+    color: var(--footer--hover--color);
+}
+
+.social-footer--icons a {
+    margin-right: 10px;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.social-footer--icons a:hover {
+    color: var(--footer--hover--color);
+}
+
+footer {
+    background-color: var(--navbar--bg--color);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+ .navbar-toggler {
+     border: 0px;
+     border-radius: 0px;
+ }
+
+ .navbar-toggler-icon {
+     border: 0px;
+     border-radius: 0px;
+
+ }
+
+ nav {
+     --bs-navbar-toggler-focus-width: 0px;
+     --bs-navbar-toggler-border-radius: 0px;
+     --bs-navbar-toggler-transition: none;
+ }
+
+ .navbar-toggler:focus,
+ .navbar-toggler:active {
+     outline: none !important;
+     box-shadow: none !important;
+     border: none !important;
+ }
+
+ .form-control:focus {
+
+     box-shadow: none !important;
+
+     outline: none !important;
+
+ }
+
+ .input-group-text {
+     position: absolute;
+     left: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 2;
+     background-color: transparent;
+     border: none;
+     color: var(--text-color);
+ }
+
+
+ .input-wrapper {
+     position: relative;
+     display: flex;
+     align-items: center;
+ }
+
+
+ .form-control {
+     padding-left: 40px;
+
+     border: none;
+     border-bottom: 2px solid var(--navbar--bg--color) !important;
+     border-radius: 0;
+ }
+
+
+ .form-floating label {
+     left: 40px;
+     transition: 0.3s ease all;
+     color: var(--body--bg--color);
+ }
+
+
+ .form-floating input:focus+label,
+ .form-floating input:not(:placeholder-shown)+label {
+     transform: translateY(-25px);
+     font-size: 12px;
+     color: var(--body--bg--color);
+ }
+
+ .btn-close:focus {
+
+     box-shadow: none !important;
+
+     outline: none !important;
+
+ }
+
+ @media (max-width: 768px) {
+     .review-section {
+         padding: 20px 10px;
+     }
+
+     .review-card {
+         padding: 15px;
+         margin: 10px auto;
+     }
+
+     .review-img {
+         width: 80px;
+         height: 80px;
+     }
+
+     .review-card p {
+         font-size: 0.9rem;
+     }
+
+     .review-card h5 {
+         font-size: 1rem;
+     }
+
+     .star-rating {
+         font-size: 1rem;
+     }
+ }
+
+@media(min-width:768px){
+    
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+    
+        nav {
+            overflow-x: hidden;
+        }
+    
+        div {
+            overflow-x: hidden;
+        }
+    
+        footer {
+            overflow-x: hidden;
+        }
+
+}

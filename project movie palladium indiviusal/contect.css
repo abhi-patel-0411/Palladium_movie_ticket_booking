@@ -1,0 +1,203 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  html {
+      scroll-behavior: smooth;
+      /* scroll-snap-type: Y mandatory; */
+  }
+   *::selection {
+       background-color: var(--navbar--bg--color);
+        color: var(--black--color);
+   }
+
+  ::-webkit-scrollbar {
+      width: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: var(--body--bg--color);
+
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      background: var(--navbar--bg--color);
+      border-radius: 50px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+      background: var(--navbar--bg--color);
+  }
+
+  :root {
+      --body--bg--color: #000;
+      /* --card--bg--color:#2a2d32; */
+      --navbar--bg--color: rgb(190, 155, 104);
+      --text-color: #fff;
+      --footer--text--color: #ccc;
+      --footer--hover--color: #f39c12;
+
+
+      --seat-bg-color: rgba(184, 184, 184, .3);
+      --seat--selected--bg--color: #ff9800;
+      --seat--booked--bg--color: #fd0505;
+      --seat--book--hover--color: #66bb6a;
+      --movie--card--btn: #fd6565;
+      --seat--before--color: rgba(184, 184, 184, .5);
+      --box--shadow--color: rgba(0, 0, 0, 0.1);
+      --box--ticket--shadow--color: rgba(0, 0, 0, 0.2);
+      --details--row--bg--color: rgba(0, 0, 0, 0.6);
+      --black--color: #000;
+
+  }
+ body {
+     font-family: "Poppins", serif;
+     font-weight: 400;
+     font-style: normal;
+     width: 100vw;
+     height: 100vh;
+     overflow-x: hidden;
+     background: var(--body--bg--color);
+     
+     
+ }
+
+ nav {
+     background-color: var(--navbar--bg--color);
+ }
+ .navbar .navbar-nav .nav-link:hover {
+     color: var(--black--color);
+ }
+
+ .footer-subheading {
+     font-size: 1.25rem;
+     font-weight: bold;
+     margin-bottom: 15px;
+     color: var(--text-color);
+ }
+
+ ul {
+     list-style-type: none;
+     padding-left: 0;
+ }
+
+ ul li {
+     margin-bottom: 8px;
+ }
+
+ ul li a {
+     color: var(--footer--text--color);
+     text-decoration: none;
+     list-style: none;
+ }
+
+ ul li a:hover {
+     color: var(--footer--hover--color);
+ }
+
+ .social-footer--icons a {
+     margin-right: 10px;
+     color: var(--text-color);
+     font-size: 1.5rem;
+ }
+
+ .social-footer--icons a:hover {
+     color: var(--footer--hover--color);
+ }
+
+ footer {
+     background-color: var(--navbar--bg--color);
+     text-align: center;
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ .navbar-toggler {
+     border: 0px;
+     border-radius: 0px;
+ }
+
+ .navbar-toggler-icon {
+     border: 0px;
+     border-radius: 0px;
+
+ }
+
+ nav {
+     --bs-navbar-toggler-focus-width: 0px;
+     --bs-navbar-toggler-border-radius: 0px;
+     --bs-navbar-toggler-transition: none;
+ }
+
+ .navbar-toggler:focus,
+ .navbar-toggler:active {
+     outline: none !important;
+     box-shadow: none !important;
+     border: none !important;
+ }
+
+ .form-control:focus {
+
+     box-shadow: none !important;
+
+     outline: none !important;
+
+ }
+
+ .input-group-text {
+     position: absolute;
+     left: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 2;
+     background-color: transparent;
+     border: none;
+     color: var(--body--bg--color);
+ }
+
+
+ .input-wrapper {
+     position: relative;
+     display: flex;
+     align-items: center;
+ }
+
+
+ .form-control {
+     padding-left: 40px;
+
+     border: none;
+     border: 2px solid var(--navbar--bg--color) !important;
+     border-radius: 10px;
+ }
+
+
+ .form-floating label {
+     left: 40px;
+     transition: 0.3s ease all;
+     color: var(--black--color);
+ }
+
+
+ .form-floating input:focus+label,
+ .form-floating input:not(:placeholder-shown)+label {
+     transform: translateY(-25px);
+     font-size: 12px;
+     color: var(--black--color);
+ }
+
+ .btn-close:focus {
+
+     box-shadow: none !important;
+
+     outline: none !important;
+
+ }
+
+ 

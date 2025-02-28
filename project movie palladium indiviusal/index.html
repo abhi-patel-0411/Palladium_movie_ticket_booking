@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1f2025">
+    <title>palladium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- AOS (Animate on Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body data-bs-spy="scroll">
+    <div id="logo-overlay">
+        <img src="./img/logo.png"
+            class="" alt="Palladium Logo">
+    </div>
+    <!-- <div class="container-fluid-sm"> -->
+    <div class="container-fluid" id="main-content">
+        <!-- Navbar -->
+       <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">
+                    <img src="./img/logo.png"
+                        class="" style="height: auto; width: 150px;" alt="Palladium Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#mov" class="nav-link">Movie</a></li>
+                        <li class="nav-item"><a href="contect.html" class="nav-link">Contact Us</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    </ul>
+
+                    <form class="d-flex">
+                        <input class="form-control me-2 rounded-pill" id="searchMovie" style="width: 300px;" type="search" placeholder="Search movies..."
+                            aria-label="Search">
+                            
+                        <button class="btn" type="submit" style="border:0px;">
+                            <i class="bi bi-search text-light"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Carousel Section -->
+        <div id="demo" class="carousel slide mt-4" data-bs-ride="carousel" data-aos="fade-up" data-bs-interval="1000">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <video class="d-block w-100" autoplay muted loop playsinline>
+                        <source src="./video/pvrtrailer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Movie Welcome Section -->
+        <section class="movie-welcome text-light ">
+            <div class="container-fluid p-0 align-items-stretch">
+                <div class="row g-0  ">
+                    <!-- Left Column: Text Content -->
+                    <div class="col-lg-6 col-md-6 col-12 d-flex  align-items-center" data-aos="fade-left">
+                        <div class="movie-wel bg-dark text-center text-md-start  py-5 w-100">
+                            <h1 class="h1 " style="color: rgb(190, 155, 104);">Welcome to Palladium PVR</h1>
+                            <p class="mt-3 lead">
+                                Experience the magic of movies like never before! At Palladium PVR, we bring you the
+                                latest
+                                blockbusters, unparalleled comfort, and state-of-the-art screens for a cinematic
+                                experience
+                                you’ll never forget.
+                            </p>
+                            <p class="mt-2">
+                                🍿 Enjoy a wide range of snacks and beverages<br>
+                                🎥 Featuring Dolby Atmos surround sound<br>
+                                🛋️ Luxurious seating for your ultimate comfort
+                            </p>
+                            <a href="contect.html" class="btn btn-danger btn-lg mt-4">Explore Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Image -->
+                    <div class="col-lg-6 col-md-6 col-12 rightimg" data-aos="fade-right">
+                        <img src="https://morningnewz.in/news/2024/Aug/01/pvr-has-launched-a-9-screen/pvr-has-launched-a-9-screen.jpeg"
+                            alt="Cinema Experience" class="img-fluid " style="object-fit: fill;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Cards Section -->
+        <section>
+            <div class="container-fluid movies-container my-4" id="mov">
+                <!-- First Row -->
+                <div class="row g-3 mb-4" data-aos="fade-left"> <!-- Add mb-4 for spacing -->
+                    <!-- Movie Cards -->
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="jawan">
+                        <a href="movie.html?movie=Jawan&img=img/bg.png&video=./video/Jawan.mp4&screen=s1&time=1:00 PM,4:30 PM" class="card">
+                            
+                            <img src="img/jawan.jpg" alt="Jawan" data-aos="fade-up">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="gadar2" id="action">
+                        <a href="movie.html?movie=Gadar2&img=img/Gadar_bg.jpg&video=./video/gadar.mp4&screen=s2" class="card">
+                            <img src="img/Gadar2.jpg" alt="Gadar 2" data-aos="fade-down">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="Ant-man">
+                    <a href="movie.html?movie=Ant-Man and the Wasp&img=https://wallpapercave.com/wp/wp13413107.jpg&video=./video/antman.mp4&screen=s3"
+                        class="card">
+
+                            <img src="img/ant man.jpg" alt="Eesho" data-aos="fade-up">
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="avengers">
+                        <a href="movie.html?movie=avengers&img=https://images.alphacoders.com/100/1002901.jpg&video=C:\fsd indivisual pvr cinema\video\AVENGERS_ENDGAME_IMAX_TLR1_3840x2160_PDA_51-thedigitaltheater.mkv&screen=s4"
+                            class="card">
+                            <img src="https://images.alphacoders.com/100/1002901.jpg" alt="Jawan" data-aos="fade-down">
+                        </a>
+                    </div>
+                </div>
+                <!-- Second Row -->
+                <div class="row g-3 mb-4" data-aos="fade-right"> 
+                    
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="RRR">
+                        <a href="movie.html?movie=RRR&img=img/rr1.jpg&video=./video/rrr.mp4&screen=s5&time=7:21 AM,8:32 PM" class="card">
+                            <img src="img/rr1.jpg" alt="Jawan" data-aos="fade-down">
+                        </a>
+                    
+                    </div>
+
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="stree 2">
+                        <a href="movie.html?movie=Stree 2&img=./img/stree2.webp&video=./video/stree2.mp4&screen=s6" class="card">
+                            <img src="./img/stree2.webp" alt="stree 2" data-aos="fade-up">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="pushpa 2">
+                        <a href="movie.html?movie=Pushpa 2:The Rule&img=./img/pushpa2ticket.jpg&video=./video/pushpa2.mp4&screen=s7"
+                            class="card">
+                            <img src="./img/pushpa2.jpg" alt="pushpa2" data-aos="fade-down">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="bhoolbhulaiyaa-3">
+                        <a href="movie.html?movie=Bhool Bhulaiyaa 3&img=./img/Bhool-Bhulaiyaa-3.jpg&video=./video/bhool-3.mp4&screen=s8" class="card">
+                            <img src="./img/bhoolbhulaiyaa-3.jpg " alt="bhoolbhulaiyaa-3" data-aos="fade-up">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="row g-3 mb-4" data-aos="fade-left"> 
+                    
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="captainamericaBraveNewWorld">
+                        <a href="movie.html?movie=Captain America: Brave New World&img=./img/captainbg.jpg&video=./video/captainamerica.mp4&screen=s9"
+                            class="card">
+                            <img src="./img/captain_america_1.webp" alt="Jawan" data-aos="fade-up">
+                        </a>
+                        
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="spiderman no way home">
+                        <a href="movie.html?movie=spiderman no way home&img=https://wallpapercave.com/wp/wp10458405.jpg&video=./video/spidernoway.mp4&screen=s10"
+                            class="card">
+                            <img src="img/spiderman.jpg" alt="Jawan" data-aos="fade-down">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="KGF 2">
+                        <a href="movie.html?movie=KGF CH-2&img=https://wallpapercave.com/wp/wp11144075.jpg&video=./video/kgfch2.mp4&screen=s11" class="card">
+                            <img src="./img/kgf2.webp" alt="kgf 2" data-aos="fade-up">
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-6 col-lg-3 movie-card" data-name="chaava">
+                        <a href="movie.html?movie=Chhaava&img=./img/chhaavaticket.jpg&video=./video/Chhaava.mp4&screen=s12" class="card">
+                            <img src="./img/chhaava.jpg" alt="chhaava" data-aos="fade-down">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer section -->
+        <footer data-aos="fade-down">
+            <div class="container">
+
+                <div class="row py-5">
+                    <!-- Footer Logo and Social Media Links -->
+                    <div class="col-12 col-md-3">
+                        <div class="logo-brand">
+                            <a href="#" class="footer-subheading"><img
+                                    src="./img/logo.png"
+                                    class="" style="height: auto; width: 150px;" alt="Palladium Logo"></a>
+                        </div>
+                        <p class="text-white">Bringing the best cinematic experience to your screens.</p>
+                        <div class="social-footer--icons">
+                            <a href="https://www.facebook.com/people/Palladium-Ahmedabad/100089805115656/"
+                                target="_blank" alt="Facebook link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://x.com/i/flow/login?redirect_after_login=%2FpalladiumAhm" target="_blank"
+                                alt="Twitter link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/palladiumahmedabad/" target="_blank"
+                                alt="Instagram link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@palladiumahmedabad" target="_blank" alt="YouTube link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Movie Categories -->
+                    <div class="col-12 col-md-3">
+                        <p class="footer-subheading">Movie Categories</p>
+                        <ul>
+                            <li><a href="#action">Action</a></li>
+                            <li><a href="#">Comedy</a></li>
+                            <li><a href="#">Romance</a></li>
+                            <li><a href="#">Horror</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Useful Links -->
+                    <div class="col-12 col-md-3">
+                        <p class="footer-subheading">Useful Links</p>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contect.html">Contact Us</a></li>
+                            <li><a href="about.html">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Latest Blog Posts -->
+                    <div class="col-12 col-md-3">
+                        <p class="footer-subheading">Latest Blog Posts</p>
+                        <ul>
+                            <li><a href="#">How to Book Tickets Online</a></li>
+                            <li><a href="#">Top 10 Movies to Watch in 2025</a></li>
+                            <li><a href="#">The Best Movie Theaters in Town</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        
+        
+    document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("searchMovie");
+            const searchButton = document.querySelector("button[type='submit']");
+            const movieCards = document.querySelectorAll(".movie-card");
+
+            // Create "No results found" message once
+            let notFoundMessage = document.createElement("p");
+            notFoundMessage.textContent = "No results found";
+            notFoundMessage.style.display = "none"; 
+            notFoundMessage.style.color = "red";
+            notFoundMessage.style.textAlign = "center";
+            notFoundMessage.id = "notFound";
+
+            document.querySelector(".movies-container").appendChild(notFoundMessage);
+
+            searchButton.addEventListener("click", function (event) {
+                event.preventDefault(); 
+
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                let found = false;
+
+                movieCards.forEach((card) => {
+                    const movieName = card.getAttribute("data-name").toLowerCase();
+
+                    if (movieName.includes(searchTerm)) {
+                        card.style.display = "block"; 
+                        found = true;
+                    } else {
+                        card.style.display = "none"; 
+                    }
+                });
+
+                // Show or hide "No results found" message
+                notFoundMessage.style.display = found ? "none" : "block";
+                if (searchTerm !== "" || searchTerm=="") {
+                    document.getElementById("mov").scrollIntoView({ behavior: "smooth" });
+                }
+            });
+
+         
+
+            // Disable AOS animations while typing in the search input
+            searchInput.addEventListener("input", function () {
+                if (this.value.trim() !== "") {
+                    document.querySelectorAll("[data-aos]").forEach(element => {
+                        element.style.opacity = "1"; 
+                        element.style.transform = "none"; // Disable animation effect
+                    });
+                    AOS.refresh();
+                }
+            });
+
+            // Reactivate AOS animations when input loses focus
+            searchInput.addEventListener("blur", function () {
+                document.querySelectorAll("[data-aos]").forEach(element => {
+                    element.removeAttribute("style"); // Restore original styles
+                });
+                AOS.refresh();
+            });
+
+               // Hide the logo overlay after 1 second
+        setTimeout(() => {
+            document.getElementById("logo-overlay").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+            AOS.refresh();
+        }, 1000);
+        });
+
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palladium</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- AOS (Animate on Scroll) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+   <link rel="stylesheet" href="movie.css">
+<style>
+    /* Style the dropdown */
+#movieTime option {
+    background-color: rgb(190, 155, 104,0.4); /* Default background */
+    color: black;   
+}
+
+/* Change background on hover */
+#movieTime option:hover {
+    background-color: #ff3700 !important; /* Change to blue on hover */
+    color: white;
+}
+
+</style>
+</head>
+
+<body data-bs-spy="scroll">
+    <div class="container-fluid" id="main-content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">
+                    <img src="https://palladiumahmedabad.s3.ap-south-1.amazonaws.com/Images/Palladium-Ahemdabad-final-Logo.png"
+                        class="" style="height: auto; width: 150px;" alt="Palladium Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">Movie</a></li>
+                        <li class="nav-item"><a href="contect.html" class="nav-link">Contact Us</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    </ul>
+                    <i class="fas fa-user-plus fa-2x text-center" id="signUpIcon"
+                        style="color:#fff; cursor: pointer; margin-right: 15px;"></i>
+                    <!-- sign in icon -->
+                    <i class="fas fa-user-circle fa-2x text-center" id="userIcon"
+                        style="color:#fff;cursor: pointer;"></i>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="modal fade img-fluid" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content"
+                style="background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; border: none;">
+                <div class="modal-header"
+                    style="background-color: rgb(190, 155, 104,0.8); border-radius: 15px 15px 0 0;">
+                    <h5 class="modal-title" id="signUpModalLabel"
+                        style="color: #fff; font-family: 'Arial', sans-serif; font-weight: 600;">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"
+                    style="padding: 40px; background-color: rgba(255, 255, 255, 0.1); border-radius: 0 0 15px 15px;">
+                    <form id="signUpForm">
+                        <!-- <div class="form-floating mb-3 position-relative">
+                            <i class="fa fa-user input-group-text"
+                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                            <input type="text" class="form-control rounded-pill ps-5" id="signUpName" placeholder=" "
+                                required style="border: 2px solid rgb(190, 155, 104);">
+                            <label for="signUpName" style="font-weight: 600;">Name</label>
+                        </div> -->
+                        <div class="form-floating mb-3 position-relative">
+                            <i class="fa fa-envelope input-group-text"
+                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                            <input type="email" class="form-control rounded-pill ps-5" id="signUpEmail"
+                            pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                            
+                            placeholder=" "
+                                required style="border: 2px solid rgb(190, 155, 104);">
+                            <label for="signUpEmail" style="font-weight: 600;">Email</label>
+                        </div>
+                        <div class="form-floating mb-3 position-relative">
+                            <i class="fa fa-lock input-group-text"
+                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                            <input type="password" class="form-control rounded-pill ps-5" id="signUpPassword"
+                                placeholder=" " required style="border: 2px solid rgb(190, 155, 104);">
+                            <label for="signUpPassword" style="font-weight: 600;">Password</label>
+                        </div>
+                        <button type="submit" class="btn rounded-pill btn-dark btn-block w-100 signbutton"
+                            style="background-color: rgb(190, 155, 104); font-weight: 600; border-radius: 25px;">
+                            <i class="fa fa-user-plus"></i> Sign Up
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade img-fluid" id="signInModal"
+        
+        tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content"
+                style="background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; border: none;">
+                <div class="modal-header"
+                    style="background-color: rgb(190, 155, 104,0.8); border-radius: 15px 15px 0 0;">
+                    <h5 class="modal-title" id="signInModalLabel"
+                        style="color: #fff; font-family: 'Arial', sans-serif; font-weight: 600;">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"
+                    style="padding: 40px; background-color: rgba(255, 255, 255, 0.1); border-radius: 0 0 15px 15px;">
+                    <form id="signInForm">
+                        <div class="form-floating mb-3 position-relative">
+                            <i class="fa fa-user input-group-text"
+                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+
+                            <input type="text" class="form-control rounded-pill ps-5" id="signInName" 
+                             placeholder=" "
+                                required style="border: 2px solid rgb(190, 155, 104);">
+                            <label for="signInName" style="font-weight: 600;">Name</label>
+
+                        </div>
+
+                        <div class="form-floating mb-3 position-relative">
+                            <i class="fa fa-envelope input-group-text"
+                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                            <input type="email" class="form-control rounded-pill ps-5" id="signInEmail" 
+                            pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                            
+                            placeholder=" "
+                                required style="border: 2px solid rgb(190, 155, 104);">
+                            <label for="signInEmail" style="font-weight: 600;">Email</label>
+                        </div>
+                        <div class="form-floating mb-3 position-relative">
+                            <i class="fa fa-lock input-group-text"
+                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                            <input type="password" class="form-control rounded-pill ps-5" id="signInPassword"
+                                placeholder=" " required style="border: 2px solid rgb(190, 155, 104);" >
+                            <label for="signInPassword" style="font-weight: 600;">Password</label>
+                        </div>
+                        <button type="submit" class="btn rounded-pill btn-dark btn-block w-100 signbutton"
+                            style="background-color: rgb(190, 155, 104); font-weight: 600; border-radius: 25px;">
+                            <i class="fa fa-sign-in-alt"></i> Sign In
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="successMessage"></p>
+                    <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- Left Section (Movie Card) -->
+        <div class="section-left">
+            <div class="movie-card">
+                <img src="https://images.alphacoders.com/100/1002901.jpg" id="moviePoster" alt="Movie Poster"
+                    data-aos="fade-up">
+                <div class="overlay" data-aos="fade-left">
+                    <h3>Movie Title</h3>
+                    <!-- <p>Genre: Action, Adventure</p> -->
+
+                </div>
+                <div id="trailerContainer" style="display: none; margin-top: 10px;" data-aos="fade-up">
+                    <video id="trailerVideo" controls width="100%">
+                        <source src="./video/endgame.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="button-container">
+                    <button class="btn" id="playButton">
+                        <div class="play">
+                            <i class="bi bi-play-fill" id="play"></i> Watch Trailer
+                        </div>
+                    </button>
+                    <a class="btn" href="#sectionbookscroll">Book Now</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- Right Section (Seat Selection) -->
+    <div class="section-right mt-4" id="sectionbookscroll" data-aos="fade-right">
+        <!-- Movie Selection, Date and Time Selection -->
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <h4>Select Date</h4>
+                <input type="date" class="form-control rounded-pill ps-2" id="movieDate">
+            </div>
+            <div class="col-md-6">
+                <h4>Select Time</h4>
+                <select class="form-select rounded-pill ps-2"  id="movieTime" required>
+                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
+                    <option value="11:00 PM">11:00 PM</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+            </div>
+        </div>
+        <div class="screen" data-aos="fade-up">
+            Screen
+        </div>
+
+        <!-- Seat Selection Section -->
+        <div class="seat-section container-fluid" id="seats" data-aos="fade-down">
+            <!-- Seats will be added dynamically here -->
+        </div>
+    </div>
+
+    <!-- Footer Section (Booking Summary) -->
+    <!-- Booking Summary Section -->
+    <div class="ticket-details">
+        <h5>Booking Summary</h5>
+        <p id="ticketInfo">No tickets selected yet.</p>
+        <button id="bookTicketBtn" class="btn btn-danger w-100" disabled data-aos="fade-up">Book Tickets</button>
+    </div>
+
+    <!-- Booked Tickets Section -->
+
+    <!-- Container to hold all generated tickets -->
+    <div id="ticketContainer"></div>
+
+    <!-- Ticket Display Section (This will be duplicated for each ticket) -->
+    <div class="ticket container" id="ticket" style="display: none;" data-aos="fade-down">
+        <div class="row">
+            <!-- Barcode Section -->
+            <div class="col-lg-3 sectionbarcode">
+                <!-- Date and Time Display Inside sectionbarcode -->
+                <div id="ticketDateTime" class="text-center mb-3">
+                    <h6 id="showscreen"></h6>
+                    <h6 id="ticketDate"></h6>
+                    <h6 id="ticketTime"></h6>
+                </div>
+
+                <!-- <svg id="barcode" class="barcode" class="mb-3"></svg> -->
+                <svg id="barcode" class="barcode mb-3" width="100%" height="auto" viewBox="0 0 200 100"
+                    preserveAspectRatio="xMidYMid meet"></svg>
+        
+                <h5 class="text-center">
+                    <img src="https://palladiumahmedabad.s3.ap-south-1.amazonaws.com/Images/Palladium-Ahemdabad-final-Logo.png"
+                        class="rounded-pill" style="height: auto; width: 120px;" alt="Palladium Logo">
+                </h5>
+            </div>
+
+
+            <!-- Ticket Details Section -->
+            <div class="col-lg-9 section-details">
+                <div class="movieimg">
+                    <img src="https://images.alphacoders.com/100/1002901.jpg" alt="Movie Poster">
+                </div>
+
+                <!-- Ticket Details Row -->
+                <div class="details-row">
+                    <div class="details-item">
+                        <h6>4DX</h6>
+                        <span>Type</span>
+                    </div>
+                    <div class="details-item">
+                        <h6>PVR Cinema</h6>
+                        <span>Cinema</span>
+                    </div>
+                    <div class="details-item">
+                        <h6 id="movieName">Jawan</h6>
+                        <span>Movie</span>
+                    </div> 
+                    <div class="details-item">
+                        <h6 id="ticketPrice">₹450</h6>
+                        <span>Price</span>
+                    </div>
+                    <div class="details-item">
+                        <h6 id="seatDetails">A18</h6>
+                        <span>Seat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- payment -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="payment-container text-center">
+                        <h2 class="mb-4 text-danger">Secure Payment</h2>
+                        <div class="row g-3 mb-3">
+                            <!-- Credit Card Option -->
+                            <div class="col-md-5 payment-option mx-auto" id="credit-card-option">
+                                <div class="icon-container text-center mb-2">
+                                    <i class="fa-brands fa-cc-visa fa-2x" style="color: navy;"></i>
+                                    <i class="fa-brands fa-cc-mastercard fa-2x" style="color: red;"></i>
+                                    <i class="fa-brands fa-cc-amex fa-2x" style="color: blue;"></i>
+                                    <i class="fa-brands fa-cc-discover fa-2x" style="color: orange;"></i>
+                                </div>
+                                <p>Pay with Credit Card</p>
+                            </div>
+    
+    
+                        </div>
+    
+    
+                        <form id="creditCardForm">
+                            <div id="credit-card-fields">
+                                <!-- Cardholder Name -->
+                                <div class="form-floating mb-3 position-relative">
+                                    <i class="fas fa-user input-group-text"
+                                        style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                                    <input type="text" class="form-control rounded-pill ps-5" id="cardholderName"
+                                        placeholder=" " required style="border: 2px solid rgb(190, 155, 104);">
+                                    <label for="cardholderName" style="font-weight: 600;">Cardholder's Name</label>
+                                </div>
+    
+                                <!-- Credit Card Number -->
+                                <div class="form-floating mb-3 position-relative">
+                                    <i class="fas fa-credit-card input-group-text"
+                                        style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                                    <input type="text" class="form-control rounded-pill ps-5" id="cardNumber"
+                                        placeholder=" " pattern="^\d{13,19}$" required style="border: 2px solid rgb(190, 155, 104);">
+                                    <label for="cardNumber"  style="font-weight: 600;">Credit Card Number</label>
+                                </div>
+    
+                                <div class="row">
+                                    <!-- Expiry Date -->
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3 position-relative">
+                                            <i class="fas fa-calendar-alt input-group-text"
+                                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                                            <input type="date" class="form-control rounded-pill ps-5" id="expDate"
+                                                placeholder=" " required style="border: 2px solid rgb(190, 155, 104);">
+                                            <label for="expDate" style="font-weight: 600;">Expiry Date</label>
+                                        </div>
+                                    </div>
+    
+                                    <!-- CVV -->
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3 position-relative">
+                                            <i class="fas fa-lock input-group-text"
+                                                style="color: rgb(190, 155, 104); position: absolute; top: 50%; transform: translateY(-50%); left: 15px;"></i>
+                                            <input type="password" class="form-control rounded-pill ps-5" id="cvv"
+                                                placeholder=" " pattern="^\d{3}$" maxlength="3" required style="border: 2px solid rgb(190, 155, 104);">
+                                            <label for="cvv" style="font-weight: 600;">CVV</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <button type="submit" class="btn rounded-pill btn-dark w-100"
+                                style="background-color: rgb(190, 155, 104); font-weight: 600;">
+                                <i class="fas fa-credit-card"></i> Proceed to Pay
+                            </button>
+                        </form>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer data-aos="fade-down">
+        <div class="container">
+
+            <div class="row py-5">
+                <!-- Footer Logo and Social Media Links -->
+                <div class="col-12 col-md-3">
+                    <div class="logo-brand">
+                        <a href="#" class="footer-subheading"><img
+                                src="https://palladiumahmedabad.s3.ap-south-1.amazonaws.com/Images/Palladium-Ahemdabad-final-Logo.png"
+                                class="" style="height: auto; width: 150px;" alt="Palladium Logo"></a>
+                    </div>
+                    <p class="text-white">Bringing the best cinematic experience to your screens.</p>
+                    <div class="social-footer--icons">
+                        <a href="https://www.facebook.com/people/Palladium-Ahmedabad/100089805115656/" target="_blank"
+                            alt="Facebook link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FpalladiumAhm" target="_blank"
+                            alt="Twitter link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/palladiumahmedabad/" target="_blank" alt="Instagram link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@palladiumahmedabad" target="_blank" alt="YouTube link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Movie Categories -->
+                <div class="col-12 col-md-3">
+                    <p class="footer-subheading">Movie Categories</p>
+                    <ul>
+                        <li><a href="index.html?#mov">Action</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Romance</a></li>
+                        <li><a href="#">Horror</a></li>
+                    </ul>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="col-12 col-md-3">
+                    <p class="footer-subheading">Useful Links</p>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contect.html">Contact Us</a></li>
+                        <li><a href="about.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Latest Blog Posts -->
+                <div class="col-12 col-md-3">
+                    <p class="footer-subheading">Latest Blog Posts</p>
+                    <ul>
+                        <li><a href="#">How to Book Tickets Online</a></li>
+                        <li><a href="#">Top 10 Movies to Watch in 2025</a></li>
+                        <li><a href="#">The Best Movie Theaters in Town</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,628 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ /* Global Styles */
+ html {
+     scroll-behavior: smooth;
+     /* scroll-snap-type: Y mandatory; */
+ }
+
+ ::-webkit-scrollbar {
+     width: 0.5rem;
+ }
+
+ /* Track */
+ ::-webkit-scrollbar-track {
+     background: var(--body--bg--color);
+
+ }
+
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+     background: var(--navbar--bg--color);
+     border-radius: 50px;
+ }
+
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+     background: var(--navbar--bg--color);
+ }
+:root{
+    --body--bg--color:#000;
+    /* --card--bg--color:#2a2d32; */
+    --navbar--bg--color:rgb(190, 155, 104);
+    --text-color:#fff;
+    --footer--text--color:#ccc;
+    --footer--hover--color:#f39c12;
+
+
+    --seat-bg-color: rgba(184, 184, 184, .3);
+    --seat--selected--bg--color:#ff9800;
+    --seat--booked--bg--color:#fd0505;
+    --seat--book--hover--color:#66bb6a ;
+    --movie--card--btn:#fd6565;
+    --seat--before--color:rgba(184, 184, 184, .5);
+    --box--shadow--color:rgba(0, 0, 0, 0.1);
+    --box--ticket--shadow--color: rgba(0, 0, 0, 0.2);
+    --details--row--bg--color:rgba(51, 45, 45, 0.42);
+    --black--color: #000;
+    
+}
+
+ body {
+    font-family: "Poppins", serif;
+        font-weight: 400;
+        font-style: normal;
+     background: var(--body--bg--color);
+     
+     color: var(--text-color);
+     margin: 0;
+     padding: 0;
+ }
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--black--color);
+}
+ .container {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 100%;
+     padding: 20px;
+ }
+
+ /* Movie Card Section */
+ .section-left {
+     width: 100%;
+     padding: 20px;
+     background: var(--body--bg--color);
+     border-radius: 10px;
+     margin-bottom: 20px;
+ }
+
+ .movie-card {
+     position: relative;
+     border-radius: 10px;
+     overflow: hidden;
+     margin-top: 90px;
+     box-shadow: 0 6px 20px var(--box--shadow--color);
+ }
+
+ .movie-card img {
+     width: 100%;
+     height: 600px;
+     object-fit: fill;
+     transition: transform 0.3s ease-in-out;
+     border-radius: 10px;
+ }
+
+ .movie-card:hover img {
+     transform: scale(1.1);
+ }
+
+ .movie-card .overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px;
+     
+     border-radius: 10px;
+     opacity: 1;
+     transition: opacity 0.3s ease-in-out;
+ }
+
+ .movie-card .overlay h3,
+ .movie-card .overlay p {
+     margin: 0;
+     text-align: center;
+ }
+
+ #trailerContainer video {
+     width: 100%;
+     position: absolute;
+     top: -10px;
+     height: 600px;
+
+     object-fit: fill;
+     border-radius: 10px;
+ }
+
+ .movie-card .button-container {
+     position: absolute;
+     bottom: 20px;
+     right: 20px;
+     display: flex;
+     gap: 10px;
+
+ }
+
+ .movie-card .button-container .btn {
+     padding: 10px 20px;
+     font-size: 14px;
+     cursor: pointer;
+     border: none;
+     border-radius: 5px;
+     background-color: var(--movie--card--btn);
+     
+     color: var(--text-color);
+
+     transition: background-color 0.3s ease;
+ }
+
+ .movie-card .button-container .btn:hover {
+     background-color: var(--seat--booked--bg--color);
+     /* #fb8c00 */
+ }
+
+ /* Seat Section */
+ .section-right {
+     width: 100%;
+     padding: 20px;
+     background: var(--body--bg--color);
+     border-radius: 10px;
+ }
+
+ .seat-section {
+     width: 100%;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+     gap: 10px;
+     justify-items: center;
+     margin-top: 20px;
+     padding: 10px;
+ }
+
+ .seat {
+     width: 30px;
+     height: 30px;
+     border-radius: 5px;
+     background: var(--seat-bg-color);
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: var(--text-color);
+     font-size: 12px;
+     transition: background-color 0.3s, transform 0.3s;
+ }
+
+ .seat.selected {
+     background-color: var(--seat--selected--bg--color);
+ }
+
+ .seat.booked {
+     background-color: var(--seat--booked--bg--color);
+     cursor: not-allowed;
+ }
+
+ .seat:hover {
+     background-color: var(--seat--book--hover--color);
+     transform: scale(1.1);
+ }
+
+ /* Screen Section */
+ .screen {
+     position: relative;
+     width: 100%;
+     height: 100px;
+     border-top: 3px solid var(--movie--card--btn);
+     margin-top: 50px;
+     border-radius: 20%;
+     overflow: hidden;
+     box-shadow: inset 0px 10px 20px var(--color);
+     text-align: center;
+     padding-top: 15px;
+     color: var(--text-color);
+     letter-spacing: 5px;
+     font-size: 12px;
+     /* display: none; */
+ }
+
+ .right .screen::before {
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 20px;
+     border-radius: 50%;
+     box-shadow: 0px 0px 20px var(--seat--before--color);
+     top: -20px;
+     left: 0;
+ }
+
+ /* Ticket Details Section */
+ .ticket-details {
+     margin-top: 20px;
+     padding: 20px;
+     border-radius: 10px;
+     background: var(--body--bg--color);
+     box-shadow: 0 4px 15px var(--box--shadow--color);
+ }
+
+ .ticket-details h5 {
+     font-size: 20px;
+     margin-bottom: 15px;
+ }
+
+ .ticket-details p {
+     font-size: 16px;
+ }
+
+ .btn-book {
+     background-color: var(--seat--selected--bg--color);
+     color: var(--text-color);
+     padding: 12px 20px;
+     font-size: 16px;
+     border-radius: 5px;
+     width: 100%;
+     cursor: pointer;
+ }
+
+ 
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     .movie-card img {
+         height: 250px;
+         object-fit: fill;
+
+         
+         
+     }
+     .button-container:hover{
+        background: transparent;
+     }
+
+     .seat-section {
+         grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+     }
+
+     .ticket-details {
+         margin-top: 20px;
+     }
+ }
+@media (max-width: 768px) {
+    .movie-card {
+        max-width: 100%;
+        
+    }
+     #trailerContainer {
+     display: none;
+     position: absolute;
+     top: 0;
+     width: 100%;
+     opacity: 0;
+     transition: opacity 0.5s ease-in-out;
+ }
+ .section-left{
+    padding: 20px 0px ;
+ }
+
+    .overlay h3,
+    .overlay p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    
+}
+ #trailerContainer {
+     display: none;
+     position: absolute;
+     top: 0;
+     width: 100%;
+     opacity: 0;
+     transition: opacity 0.5s ease-in-out;
+ }
+
+ #trailerContainer.show {
+     display: block;
+     opacity: 1;
+     object-fit: cover;
+ }
+
+ .button-container .btn {
+     margin: 5px;
+ }
+
+ /* Add any other styling for the movie card as needed */
+ /* sssf */
+ .ticket {
+     background-color: var(--body--bg--color);
+     border-radius: 10px;
+     box-shadow: 0 4px 6px var(--box--ticket--shadow--color);
+     max-width: 100%;
+     margin: 20px auto;
+     overflow: hidden;
+     display: none;
+     /* Hide ticket by default */
+     border: 3px solid var(--navbar--bg--color);
+ }
+
+ .sectionbarcode {
+     background-color: var(--navbar--bg--color);
+     padding: 10px;
+     position: relative;
+     top: 13px;
+     height: 375px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .section-details {
+     background: var(--body--bg--color);
+     padding: 15px;
+     display: flex;
+     margin: 0px;
+     flex-direction: column;
+     /* Ensures proper alignment of elements */
+     justify-content: space-between;
+ }
+
+ .movieimg img {
+     width: 100%;
+     height: 300px;
+     /* Fixed height of 400px for the image */
+     /* object-fit: fill; */
+     object-position: top;
+
+
+
+ }
+
+ .details-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px;
+     background-color: var(--details--row--bg--color);
+     border-radius: 5px;
+     color: var(--text-color);
+     margin-top: 10px;
+ }
+
+ .details-item {
+     text-align: center;
+     flex: 1;
+     font-size: 14px;
+ }
+
+ .details-item h6 {
+     margin: 0;
+     font-weight: bold;
+ }
+
+ .details-item span {
+     font-size: 12px;
+     color: var(--footer--text--color);
+ }
+
+ #barcode {
+     width: 100%;
+     height: 200px;
+ }
+
+ /* footer */
+ .footer-subheading {
+     font-size: 1.25rem;
+     font-weight: bold;
+     margin-bottom: 15px;
+     color: var(--text-color);
+ }
+
+ ul {
+     list-style-type: none;
+     padding-left: 0;
+ }
+
+ ul li {
+     margin-bottom: 8px;
+ }
+
+ ul li a {
+     color: var(--footer--text--color);
+     text-decoration: none;
+     list-style: none;
+ }
+
+ ul li a:hover {
+     color: var(--footer--hover--color);
+ }
+
+ .social-footer--icons a {
+     margin-right: 10px;
+     color: var(--text-color);
+     font-size: 1.5rem;
+ }
+
+ .social-footer--icons a:hover {
+     color: var(--footer--hover--color);
+ }
+
+ footer {
+     background-color: var(--navbar--bg--color);
+     text-align: center;
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ nav {
+     background-color: var(--navbar--bg--color);
+
+ }
+
+ .modal {
+     color: var(--black--color);
+ }
+
+ @media (max-width : 768px) {
+     #trailerContainer {
+         display: none;
+         position: absolute;
+         top: 0;
+         width: 100%;
+         opacity: 0;
+         transition: opacity 0.5s ease-in-out;
+     }
+
+     #trailerContainer.show {
+         display: block;
+         opacity: 1;
+         object-fit: cover;
+     }
+
+     #trailerContainer video {
+         height: 250px;
+         width: 100%;
+         
+     }
+
+     .button-container .btn {
+         margin: 5px;
+     }
+ }
+
+
+
+
+
+
+ /* ----------------- */
+
+ .navbar-toggler {
+     border: 0px;
+     border-radius: 0px;
+ }
+
+ .navbar-toggler-icon {
+     border: 0px;
+     border-radius: 0px;
+
+ }
+
+ nav {
+     --bs-navbar-toggler-focus-width: 0px;
+     --bs-navbar-toggler-border-radius: 0px;
+     --bs-navbar-toggler-transition: none;
+ }
+
+ .navbar-toggler:focus,
+ .navbar-toggler:active {
+     outline: none !important;
+     box-shadow: none !important;
+     border: none !important;
+ }
+
+ .form-control:focus {
+
+     box-shadow: none !important;
+
+     outline: none !important;
+
+ }
+
+ .input-group-text {
+     position: absolute;
+     left: 10px;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 2;
+     background-color: transparent;
+     border: none;
+     color: var(--text-color);
+ }
+
+
+ .input-wrapper {
+     position: relative;
+     display: flex;
+     align-items: center;
+ }
+
+
+ .form-control {
+     padding-left: 40px;
+
+     border: none;
+     border: 2px solid var(--navbar--bg--color) !important;
+     border-radius: 0;
+ }
+ .form-select {
+     padding-left: 40px;
+
+     border: none;
+     border: 2px solid var(--navbar--bg--color) !important;
+     border-radius: 0;
+ }
+*::selection{
+    background-color: var(--navbar--bg--color);
+    color: var(--black--color);
+}
+
+ .form-floating label {
+     left: 40px;
+     transition: 0.3s ease all;
+     color: var(--body--bg--color);
+ }
+
+
+ .form-floating input:focus+label,
+ .form-floating input:not(:placeholder-shown)+label {
+     transform: translateY(-25px);
+     font-size: 12px;
+     color: var(--body--bg--color);
+ }
+
+ .btn-close:focus {
+
+     box-shadow: none !important;
+
+     outline: none !important;
+
+ }
+
+         #signUpModal,
+         #signInModal {
+            
+             backdrop-filter: blur(10px);
+         }
+    
+         @media (max-width: 768px) {
+             #signInModal {
+                 
+                 backdrop-filter: blur(10px);
+             }
+    
+             #signUpModal {
+                 backdrop-filter: blur(10px);
+             }
+         }
+                 .barcode {
+                     max-width: 400px;
+                     
+                     height: 200px;
+                 }
+        
+                 @media (min-width: 1023px) {
+                     .barcode {
+                         max-width: 300px;
+                         height: 200px;
+                         width: 300px;
+                         
+                     }
+                 }
+
+        
