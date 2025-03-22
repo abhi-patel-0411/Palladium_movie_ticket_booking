@@ -80,7 +80,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-**Project Link:** [https://github.com/abhi-patel-0411/palladium_movie_ticket_booking_system](https://github.com/abhi-patel-0411/palladium_movie_ticket_booking_system)
+**Project Link:** [https://github.com/abhi-patel-0411/Palladium_movie_ticket_booking](https://github.com/abhi-patel-0411/Palladium_movie_ticket_booking)
+
+
 
 **Email:** abhiposhiya0104@gmail.com
 
