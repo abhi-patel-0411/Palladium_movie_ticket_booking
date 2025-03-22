@@ -1,12 +1,9 @@
-Unfortunately, GitHub's `README.md` files do not support custom CSS or background colors directly. However, you can use **shields.io badges**, **emojis**, and **markdown tables** to add some visual flair and make your README more attractive.
-
-Here’s an updated version of your `README.md` with some **badges** and **tables** to make it more visually appealing:
-
 ---
 
 <div align="center">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=000C&width=650&lines=🎥+Palladium+Movie+Ticket+Booking+System🍿" alt="Typing SVG">
 
-# 🎥 Palladium Movie Ticket Booking System 🍿
+
 
 ![GitHub](https://img.shields.io/github/license/abhi-patel-0411/Palladium_movie_ticket_booking?color=blue&style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/abhi-patel-0411/Palladium_movie_ticket_booking?style=for-the-badge)
@@ -106,10 +103,3 @@ Thank you for checking out the **Palladium Movie Ticket Booking System**! We hop
 
 ---
 
-### 🎨 Tips for Enhancing README.md:
-- Use **shields.io badges** to display project stats like license, size, stars, and forks.
-- Use **tables** to organize information neatly.
-- Use **emojis** to make sections visually appealing.
-- Use **dividers** (`---`) to separate sections clearly.
-
-If you want to add **background colors**, you would need to host the README on a platform that supports custom CSS (like a personal website or GitHub Pages). Let me know if you'd like help with that! 😊
