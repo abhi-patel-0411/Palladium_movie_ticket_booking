@@ -17,8 +17,8 @@ Welcome to the **Palladium Movie Ticket Booking System**! This project is a web-
 ---
 ## Demo 🎥
 
-Check out the live demo of **Burger Farm** here:  
-👉 [Burger Farm Demo](https://burger-farm-psi.vercel.app)
+Check out the live demo of **Palladium Movie Ticket Booking** here:  
+👉 [Palladium Movie Ticket Booking Demo](https://palladium-movie-ticket-booking.vercel.app/)
 
 ---
 ---
