@@ -20,9 +20,7 @@ Welcome to the **Palladium Movie Ticket Booking System**! This project is a web-
 Check out the live demo of **Palladium Movie Ticket Booking** here:  
 👉 [Palladium Movie Ticket Booking Demo](https://palladium-movie-ticket-booking.vercel.app/)
 
----
-
-[Watch and download the demo video](demo.mp4)
+👉 🎬 [Watch and download the demo video](demo.mp4)
 
 ---
 
