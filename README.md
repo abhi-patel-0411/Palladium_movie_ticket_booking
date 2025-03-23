@@ -15,12 +15,15 @@
 Welcome to the **Palladium Movie Ticket Booking System**! This project is a web-based application designed to provide users with a seamless experience for booking movie tickets online. Built using **HTML, CSS, JavaScript, and Bootstrap**, this system offers a range of functionalities to enhance the user experience.
 
 ---
-## Demo 🎥
+## Live Demo 🎥
 
 Check out the live demo of **Palladium Movie Ticket Booking** here:  
 👉 [Palladium Movie Ticket Booking Demo](https://palladium-movie-ticket-booking.vercel.app/)
 
 ---
+
+---
+[Watch the demo video](demo.mp4)
 ---
 
 ## ✨ Features
