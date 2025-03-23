@@ -22,8 +22,8 @@ Check out the live demo of **Palladium Movie Ticket Booking** here:
 
 ---
 
----
-[Watch the demo video](demo.mp4)
+[Watch and download the demo video](demo.mp4)
+
 ---
 
 ## ✨ Features
